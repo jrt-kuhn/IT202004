@@ -17,4 +17,29 @@ function getDebug($dumpAll = false){
         echo var_export($_SESSION, true);
     }
 }
+
+function safe($var){
+    echo htmlentities($var, ENT_QUOTES, "utf-8");
+}
+
+function is_logged_in(){
+    return isset($_SESSION["user"]) && isset($_SESSION["user"]["id"]);
+}
+
+function get_email(){
+    if(is_logged_in()){
+        return $_SESSION["user"]["email"];
+    }
+    return "";
+}
+
+function get_username(){
+    if(is_logged_in()){
+        if(isset($_SESSION["user"]["username"])){
+            return $_SESSION["user"]["username"];
+        }
+        return get_email();
+    }
+    return "";
+}
 ?>
