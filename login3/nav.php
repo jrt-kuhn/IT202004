@@ -14,6 +14,10 @@ $sidvalue = session_id();
 require(__DIR__ . "/../lib/myFunctions.php");
 ?>
 <link rel="stylesheet" href="styles.css">
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
 <ul class="nav">
 <?php if(!is_logged_in()):?>
 <li><a href="authenticate.php">Login</a></li>
